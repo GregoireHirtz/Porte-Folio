@@ -1,0 +1,63 @@
+body{
+	margin: 0;
+	background-image: url('http://localhost/static/media/detailProjet.jpg');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.bloc1{
+    background-color: rgba(0, 0, 0, 0.5);
+    position: relative;
+    margin: auto;
+    text-align: center;
+
+    width: 50em;
+    min-height: 10em;
+    margin-top: 5em;
+    padding-bottom: 1em;
+
+    border-radius: 10px;
+    border: 2px solid white;
+}
+
+.bloc1 h1{
+    color: white;
+    font-size: 2.5em;
+    text-decoration: underline;
+}
+
+.bloc1 p{
+    position: relative;
+    margin: auto;
+
+    width: 20em;
+    min-height: 2em;
+    margin-bottom: 1em;
+
+    color: white;
+    font-size: 1.5em;
+}
+
+.bloc1 a{
+    position: relative;
+    margin: auto;
+
+    min-width: 10em;
+    min-height: 2em;
+    padding: .3em .6em .3em .6em;
+
+    color: white;
+    font-size: 1.5em;
+    border-radius: 10px;
+}
+
+.bloc1 a:hover{
+    background-color: rgba(0, 0, 0, 0.2);
+    position: relative;
+    margin: auto;
+
+    min-width: 10em;
+    min-height: 2em;
+    text-decoration: underline;
+}

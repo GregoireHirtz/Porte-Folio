@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
+	{% block css %}{% endblock %}
+	<title></title>
+</head>
+<body>
+	<div class="top">
+	<div class="topBox">
+		<div class="logoBox"><a href="{% url 'accueil' %}"><img src="{% static 'media/logo.png' %}"></a></div>
+
+		<ul>
+			<li><a href="#bloc1">Profil</a></li>
+			<li><a href="#bloc2">Projets</a></li>
+			{% if user.is_authenticated %}
+			{% if user.is_superuser%}
+		    <li class="client"><a href='/admin/'>Administration</a></li>
+		    {% endif %}
+		    <li class="client"><a href="{% url 'deconnexion' %}">{{ user.username }}</a></li>
+		    {% else %}
+			<li class="client"><a href="{% url 'connexion' %}">Connectez-vous</a></li>
+			{% endif %}
+		</ul>
+	</div>
+	</div>
+
+	{% block content %}{% endblock %}
+</body>
+</html>

@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/web/detailProjet.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="bloc1">
+	<h1>{{ projets.name }}</h1>
+	<p>{{ projets.description }}</p>
+	<a href="{{ projets.link }}">lien vers le projet</a>
+</div>
+
+
+{% endblock %}

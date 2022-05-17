@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/web/accueil.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="mainBox">
+	<h1>Mon porte Folio</h1>
+	<div id="bloc1" class="bloc1">
+		<img src="{% static 'media/profil.jpg' %}">
+		<li>Grégoire HIRTZ</li>
+		<li>Terminale</li>
+		<li>Lycée Fabert Metz</li>
+		<li>2004</li>
+	</div>
+	<div id="bloc2" class="bloc2">
+		<h2>Mes projets</h2>
+		{% for projet in projets %}
+		<li><a href="{% url 'projetDetail' slug=projet.slug %}">{{ projet.name }}</a></li> 
+		{% endfor %}
+	</div>
+</div>
+{% endblock %}

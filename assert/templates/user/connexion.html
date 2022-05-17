@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/user/connexion.css' %}">
+    <title>Connexion</title>
+</head>
+<body>
+<div class="connexion">
+<a href="{% url 'accueil' %}"><p>Connexion</p></a>
+<form method="POST">
+    {% csrf_token %}
+    <label for="username">Identifiant</label><br>
+    <input type="text" id="username" name="username" size="70"><br><br>
+
+    <label for="password">Mot de passe</label><br>
+    <input type="password" id="password" name="password" size="70"><br><br>
+
+    <input class="bouton" type="submit" value="Se connecter"><br><br>
+
+    {% if erreur == 1 %}
+    <label class="erreur" style="color: red;">Identifiant ou mot de passe incorrect</label><br><br>
+    {% endif%}
+
+    <a href="{% url 'inscription' %}"><label class="inscription">Inscrivez-vous</label></a>
+</form>
+</div>
+</body>
+</html>
